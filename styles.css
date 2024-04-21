@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* Josh Comeau's Custom CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* CSS variables */
+:root {
+  /* colors */
+  --blue: #666ca3;
+  --dark-blue: #13183f;
+  --gray: #83869a;
+  --dark-pink: #f74780;
+  --light-pink: #ffa7c3;
+  --white: #fff;
+  --gradient-orange-pink: linear-gradient(#f02aa6, #ff6f48);
+  --gradient-blue-pink: linear-gradient(#4851ff, #f02aa6);
+  --gradient-white-light-blue: linear-gradient(#fff, #f0f1ff);
+
+  /* typography */
+  --ff-body: 'Plus Jakarta Sans', sans-serif;
+  --ff-headings: 'Plus Jakarta Sans', sans-serif;
+  --fluid-text-24-20px: clamp(1.25rem, 1.1416rem + 0.4624vi, 1.5rem);
+  --fluid-text-56-40px: clamp(2.5rem, 2.0665rem + 1.8497vi, 3.5rem);
+  --fluid-text-18-16px: clamp(1rem, 0.9458rem + 0.2312vi, 1.125rem);
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+
+  /* spacing */
+  --fluid-padding-39-16px: clamp(1rem, 0.3768rem + 2.659vi, 2.4375rem);
+  --fluid-margin-172-38px: clamp(2.375rem, -1.2558rem + 15.4913vi, 10.75rem);
+  /* !Add the rest of the spacing for the page */
+}
+
+/* reusable styles */
+.section-container {
+  max-width: 69.375rem;
+  padding-block: var(--fluid-padding-39-16px);
+}
+
+/* page styles */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
