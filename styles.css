@@ -163,7 +163,7 @@ body {
   line-height: 1.5;
 
   background: url(/assets/image-hero-desktop@2x.png);
-  background-size: 68%;
+  background-size: 65%;
   background-repeat: no-repeat;
   background-position: top -15% right -50%;
   background-color: var(--gradient-3);
@@ -174,16 +174,16 @@ body {
 @media (max-width: 77em) {
   body {
     background: url(/assets/image-hero-tablet@2x.webp);
-    background-size: 68%;
+    background-size: 70%;
     background-repeat: no-repeat;
-    background-position: top -5% right -70%;
+    background-position: top -5% right -75%;
   }
 }
 
 @media (max-width: 54em) {
   body {
-    background-size: 80%;
-    background-position: top 0 right -130%;
+    background-size: 75%;
+    background-position: top 0 right -95%;
   }
 }
 
