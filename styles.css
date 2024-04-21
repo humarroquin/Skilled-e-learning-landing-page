@@ -155,6 +155,11 @@ h6 {
   color: var(--white);
 }
 
+.btn--footer:is(:hover, :active) {
+  opacity: 0.9;
+  filter: brightness(2);
+}
+
 /* body styles */
 body {
   font-family: var(--ff-body);
