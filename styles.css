@@ -145,6 +145,11 @@ h6 {
   padding: 1.1875rem 2rem;
 }
 
+.btn--card {
+  color: var(--dark-pink);
+  width: fit-content;
+}
+
 .btn--footer {
   background: var(--gradient-2);
   color: var(--white);
@@ -173,19 +178,22 @@ body {
   justify-content: space-between;
 }
 
-.header__logo {
+.logo {
   width: 7.125rem;
 }
 
 @media (max-width: 48rem) {
+  body {
+    font-size: 1rem;
+  }
   .header {
     padding-top: 1.5rem;
   }
   .header__logo {
     width: 5.5635rem;
   }
-  body {
-    font-size: 1rem;
+  .logo {
+    width: 5.5625rem;
   }
 }
 
@@ -209,7 +217,6 @@ body {
   .hero__title {
     margin-bottom: 1.5625rem;
   }
-
   .hero__description {
     margin-bottom: 1.5rem;
   }
@@ -222,15 +229,22 @@ body {
 }
 
 .courses__grid-3cols {
+  /* 10-30px */
+  --gap-col: clamp(0.625rem, -0.0128rem + 2.7211vi, 1.875rem);
+  /* 40-80px */
+  --gap-row: clamp(2.5rem, 1.2245rem + 5.4422vi, 5rem);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 3.5rem 1.9375rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: var(--gap-row) var(--gap-col);
 }
 
 .courses__card {
   background: var(--white);
-  padding: 3.9375rem 2.375rem 2.375rem;
+  padding: 4rem 2.5rem 2.5rem;
   border-radius: 0.9375rem;
+
+  display: grid;
+  gap: 1.5rem;
 
   position: relative;
 }
@@ -246,4 +260,16 @@ body {
 
   position: absolute;
   top: -2rem;
+  left: 2.375rem;
+}
+
+/* footer */
+footer {
+  padding-block: 2rem;
+  background: var(--dark-blue);
+}
+
+.footer-wrapper {
+  align-items: center;
+  justify-content: space-between;
 }
