@@ -51,35 +51,199 @@ h6 {
   --dark-pink: #f74780;
   --light-pink: #ffa7c3;
   --white: #fff;
-  --gradient-orange-pink: linear-gradient(#f02aa6, #ff6f48);
-  --gradient-blue-pink: linear-gradient(#4851ff, #f02aa6);
-  --gradient-white-light-blue: linear-gradient(#fff, #f0f1ff);
+  --gradient-1: linear-gradient(#f02aa6, #ff6f48);
+  --gradient-2: linear-gradient(#4851ff, #f02aa6);
+  --gradient-3: linear-gradient(#fff, #f0f1ff);
 
   /* typography */
   --ff-body: 'Plus Jakarta Sans', sans-serif;
   --ff-headings: 'Plus Jakarta Sans', sans-serif;
-  --fluid-text-24-20px: clamp(1.25rem, 1.1416rem + 0.4624vi, 1.5rem);
-  --fluid-text-56-40px: clamp(2.5rem, 2.0665rem + 1.8497vi, 3.5rem);
-  --fluid-text-18-16px: clamp(1rem, 0.9458rem + 0.2312vi, 1.125rem);
+
+  --fluid-text-56-40px: clamp(2.5rem, 1.9898rem + 2.1769vi, 3.5rem);
+  --fluid-text-32-24px: clamp(1.5rem, 1.2449rem + 1.0884vi, 2rem);
+  --fluid-text-24-20px: clamp(1.25rem, 1.1224rem + 0.5442vi, 1.5rem);
+  --fluid-text-18-16px: clamp(1rem, 0.9362rem + 0.2721vi, 1.125rem);
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 700;
   --fw-extra-bold: 800;
-
-  /* spacing */
-  --fluid-padding-39-16px: clamp(1rem, 0.3768rem + 2.659vi, 2.4375rem);
-  --fluid-margin-172-38px: clamp(2.375rem, -1.2558rem + 15.4913vi, 10.75rem);
-  /* !Add the rest of the spacing for the page */
 }
 
-/* reusable styles */
+/* REUSABLE STYLES */
+
+/* general */
 .section-container {
   max-width: 69.375rem;
-  padding-block: var(--fluid-padding-39-16px);
+  margin: 0 auto;
+  padding-inline: clamp(1rem, 0.3768rem + 2.659vi, 2.4375rem);
 }
 
-/* page styles */
+.flex-container {
+  display: flex;
+}
+
+/* headings */
+.heading-1 {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-extra-bold);
+  font-size: var(--fluid-text-56-40px);
+  /* line height 70-51px */
+  line-height: clamp(3.1875rem, 2.5816rem + 2.585vi, 4.375rem);
+}
+
+.heading-2 {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-extra-bold);
+  font-size: var(--fluid-text-32-24px);
+  /* line height 40-28px */
+  line-height: clamp(1.75rem, 1.3673rem + 1.6327vi, 2.5rem);
+}
+
+.heading-3 {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-extra-bold);
+  font-size: var(--fluid-text-24-20px);
+  line-height: 28px;
+}
+
+/* btns */
+.btn {
+  border: none;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  font-weight: var(--fw-bold);
+  display: inline-block;
+
+  transition: all 0.3s;
+}
+
+.btn:is(:hover, :active) {
+  opacity: 0.7;
+}
+
+.btn--header,
+.btn--body,
+.btn--footer {
+  border-radius: 3rem;
+}
+
+.btn--header,
+.btn--footer {
+  padding: 0.875rem 1.9375rem;
+}
+
+.btn--header {
+  background: var(--dark-blue);
+  color: var(--white);
+}
+
+.btn--body {
+  background: var(--gradient-1);
+  color: var(--white);
+  padding: 1.1875rem 2rem;
+}
+
+.btn--footer {
+  background: var(--gradient-2);
+  color: var(--white);
+}
+
+/* body styles */
 body {
+  font-family: var(--ff-body);
+  font-size: 1.125rem;
+  font-weight: var(--fw-regular);
   line-height: 1.5;
+
+  background: url(/assets/image-hero-desktop@2x.png);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: 45rem -10rem;
+  background-color: var(--gradient-3);
+
   -webkit-font-smoothing: antialiased;
+}
+
+/* header section */
+.header {
+  padding-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: 7.125rem;
+}
+
+@media (max-width: 48rem) {
+  .header {
+    padding-top: 1.5rem;
+  }
+  .header__logo {
+    width: 5.5635rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+}
+
+/* hero section */
+.hero {
+  padding-top: clamp(2.375rem, -1.2558rem + 15.4913vi, 10.75rem);
+  padding-bottom: 14.125rem;
+}
+
+.hero__title {
+  max-width: 29rem;
+  margin-bottom: 1.8125rem;
+}
+
+.hero__description {
+  max-width: 27rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 48rem) {
+  .hero__title {
+    margin-bottom: 1.5625rem;
+  }
+
+  .hero__description {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* courses section */
+.courses {
+  background: var(--gradient-3);
+  padding-bottom: 8.625rem;
+}
+
+.courses__grid-3cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 3.5rem 1.9375rem;
+}
+
+.courses__card {
+  background: var(--white);
+  padding: 3.9375rem 2.375rem 2.375rem;
+  border-radius: 0.9375rem;
+
+  position: relative;
+}
+
+.courses__card-gradient {
+  background: var(--gradient-1);
+  color: var(--white);
+}
+
+.courses__card-icon {
+  width: 56px;
+  height: 56px;
+
+  position: absolute;
+  top: -2rem;
 }
