@@ -272,6 +272,12 @@ body {
   padding-bottom: 8.625rem;
 }
 
+@media (max-width: 48em) {
+  .courses {
+    padding-bottom: 5.375rem;
+  }
+}
+
 .courses__grid-3cols {
   /* 10-30px */
   --gap-col: clamp(0.625rem, -0.0128rem + 2.7211vi, 1.875rem);
